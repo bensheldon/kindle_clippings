@@ -23,6 +23,9 @@ jobs:
           bundler-cache: true
           rubygems: latest
 
+      - name: Import files
+        run: bundle exec bin/import
+
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Auto import clippings
