@@ -2,7 +2,7 @@
 
 Automatically ingests Kindle's `My Clippings.txt` files; combines, dedupes, and preserves their contents (Highlights/Bookmarks/Notes), and generates a simple website for reading and exploring them.
 
-This project uses **GitHub Actions** to automatically ingest and process the `My Clippings.txt` files, re-committing the updated [`clippings.yml`](./clippings.yml) back to this repository. Then, a custom **Jekyll** static site is generated and published to **GitHub Pages**.  
+This project uses [**GitHub Actions**](./.github/workflows) to automatically ingest and process the `My Clippings.txt` files, re-committing the updated [`clippings.yml`](./clippings.yml) back to this repository. Then, a custom **Jekyll** static site is generated and published to [**GitHub Pages**](https://bensheldon.github.io/kindle_clippings).  
 
 ## To use entirely through GitHub.com
 
