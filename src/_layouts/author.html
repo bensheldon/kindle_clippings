@@ -7,7 +7,9 @@ layout: default
 {% for book in page.books %}
   <h2>{{ book.title }}</h2>
 
-  {% for clipping in book.clippings %}
-    <li>{{ clipping.content }}</li>
-  {% endfor %}
+  <ul>
+    {% for clipping in book.clippings %}
+      <li>{{ clipping.content }}</li>
+    {% endfor %}
+  </ul>
 {% endfor %}

@@ -11,9 +11,6 @@ initial_clippings = YAML.load_file('clippings.yml').size
 
 puts 'Importing clipping...'
 importer.import
-puts 'Deduping clippings...'
-importer.dedupe
 
 total_clippings = YAML.load_file('clippings.yml').size
-
 puts "Imported #{total_clippings - initial_clippings} new clippings, #{total_clippings} total."

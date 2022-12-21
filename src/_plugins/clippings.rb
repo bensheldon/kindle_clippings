@@ -1,46 +1,72 @@
-# require 'active_support/core_ext/string/inflections'
-#
-# module Clippings
-#   class ClippingPageGenerator < Jekyll::Generator
-#     safe true
-#
-#     def generate(site)
-#       site.data['clippings'].each do |clipping|
-#         site.pages << ClippingPage.new(site, clipping)
-#       end
-#     end
-#   end
-#
-#   # Subclass of `Jekyll::Page` with custom method definitions.
-#   class ClippingPage < Jekyll::Page
-#     def initialize(site, clipping)
-#       @site = site                # the current site instance.
-#       @base = site.source         # path to the source directory.
-#       @dir  = clipping['title'].parameterize   # the directory the page will reside in.
-#
-#       # All pages have the same filename, so define attributes straight away.
-#       @basename = 'index'      # filename without the extension.
-#       @ext      = '.html'      # the extension.
-#       @name     = 'index.html' # basically @basename + @ext.
-#
-#       # Initialize data hash with a key pointing to all posts under current category.
-#       # This allows accessing the list in a template via `page.linked_docs`.
-#       @data = clipping
-#
-#       # Look up front matter defaults scoped to type `books`, if given key
-#       # doesn't exist in the `data` hash.
-#       data.default_proc = proc do |_, key|
-#         site.frontmatter_defaults.find(relative_path, :clippings, key)
-#       end
-#     end
-#
-#     # Placeholders that are used in constructing page URL.
-#     def url_placeholders
-#       {
-#         :category   => @dir,
-#         :basename   => basename,
-#         :output_ext => output_ext,
-#       }
-#     end
-#   end
-# end
+# frozen_string_literal: true
+
+require 'active_support/core_ext/string/inflections'
+
+module Clippings
+  class PageGenerator < Jekyll::Generator
+    safe true
+
+    def generate(site)
+      site.data['clippings'].each do |item|
+        item['added_on'] = Date.parse(item['added_on'])
+      end
+      site.data['clippings'].sort_by! { |item| item['added_on'] }
+
+      generate_books(site)
+      generate_authors(site)
+    end
+
+    private
+
+    def generate_books(site)
+      site.collections['books'] ||= Jekyll::Collection.new(site, 'books')
+
+      site.data['clippings']
+          .select { |item| item['type'] == 'Highlight' }
+          .group_by { |item| item['title'] }
+          .sort_by { |_title, clippings| clippings.map { |c| c['added_on'] }.max }
+          .each do |title, clippings|
+        dir = '.'
+        name = "#{Jekyll::Utils.slugify(title, mode: 'latin')}.html"
+
+        site.collections['books'].docs << Jekyll::PageWithoutAFile.new(site, site.source, dir, name).tap do |page|
+          page.content = ''
+          page.data.merge!(
+            'title' => title,
+            'author' => clippings.first['author'],
+            'added_on' => clippings.map { |c| c['added_on'] }.max,
+            'clippings' => clippings,
+            'permalink' => "/books/#{name}",
+            'layout' => 'book'
+          )
+        end
+      end
+    end
+
+    def generate_authors(site)
+      site.collections['authors'] ||= Jekyll::Collection.new(site, 'authors')
+
+      site.collections['books'].docs
+          .group_by { |item| item['author'].strip }
+          .sort_by { |_title, books| books.map { |b| b.data['added_on'] }.max }
+          .each do |author, books|
+        author = 'blank' if author.blank?
+
+        dir = '.'
+        name = "#{Jekyll::Utils.slugify(author, mode: 'latin')}.html"
+
+        site.collections['authors'].docs << Jekyll::PageWithoutAFile.new(site, site.source, dir, name).tap do |page|
+          page.content = ''
+          page.data.merge!(
+            'full_name' => author,
+            'name' => author,
+            'added_on' => books.map { |b| b.data['added_on'] }.max,
+            'books' => books,
+            'permalink' => "/authors/#{name}",
+            'layout' => 'author'
+          )
+        end
+      end
+    end
+  end
+end
