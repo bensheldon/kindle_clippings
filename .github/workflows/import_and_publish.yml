@@ -1,4 +1,4 @@
-name: Import
+name: Import and Publish
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
           bundler-cache: true
           rubygems: latest
 
-      - name: Check file existence
+      - name: Check for new files to import
         id: check_files
         uses: andstor/file-existence-action@v2
         with:
@@ -39,3 +39,14 @@ jobs:
         with:
           commit_message: Auto import clippings
           file_pattern: 'clippings.yml imports/*.yml import_here/*.txt'
+
+      - name: Jekyll build
+        run: bundle exec jekyll build --trace --profile
+
+      - name: Publish GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          enable_jekyll: false
