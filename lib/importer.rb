@@ -5,15 +5,13 @@ require 'yaml'
 
 class Importer
   def dedupe
-    clippings = Dir.glob('imports/*.yml').each_with_object([]) do |filename, memo|
+    clippings = imported_files.each_with_object([]) do |filename, memo|
       memo.concat YAML.load_file(filename)
     end
 
     clippings.uniq! do |item|
       [item['title'], item['author'], item['type'], item['added_on'], item['location'], item['content']]
     end
-
-    total_clippings = clippings.size
 
     # Remove clippings that are fragments of other clippings
     clippings = clippings.filter_map do |item|
@@ -28,13 +26,12 @@ class Importer
       item unless is_fragment
     end
 
-    puts "Reduced #{total_clippings} clippings to #{clippings.size} clippings"
-
-    File.write('clippings.yml', clippings.to_yaml)
+    File.write(clippings_file, clippings.to_yaml)
+    clippings
   end
 
   def import
-    Dir.glob('import_here/*.txt').each do |filename|
+    kindle_files.each do |filename|
       parser = KindleClippings::Parser.new
       clippings = parser.parse_file(filename)
 
@@ -54,5 +51,17 @@ class Importer
                  data.to_yaml)
       File.delete(filename)
     end
+  end
+
+  def kindle_files
+    Dir.glob('import_here/*.txt')
+  end
+
+  def imported_files
+    Dir.glob('imports/*.yml')
+  end
+
+  def clippings_file
+    'clippings.yml'
   end
 end
