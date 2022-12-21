@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css">
+  <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+    <a class="navbar-brand" href="/">Kindle Clippings</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/#authors">Authors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#books">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#clippings">Clippings</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <div class="container">
+  <h1>Practical Object-Oriented Design in Ruby: An Agile Primer (Addison-Wesley Professional Ruby)</h1>
+<h2>Sandi Metz</h2>
+
+<ul>
+  
+    <li>Well-designed applications are highly abstract and under constant pressure to evolve; without tests these applications can neither be understood nor safely changed. The</li>
+  
+    <li>Design is more the art of preserving changeability than it is the act of achieving perfection. Organizing Code to Allow for Easy</li>
+  
+    <li>You will never know less than you know right now.</li>
+  
+    <li>Creating an easy-to-change application, however, is a different matter. Your application needs to work right now just once; it must be easy to change forever. This quality of easy changeability reveals the craft of programming. Achieving it takes knowledge, skill, and a bit of artistic creativity.</li>
+  
+    <li>To name common problems and to solve the problems in common ways brings the fuzzy into focus. Design Patterns gave an entire generation of programmers the means to communicate and collaborate.</li>
+  
+    <li>Designs that anticipate specific future requirements almost always end badly. Practical design does not anticipate what will happen to your application, it merely accepts that something will and that, in the present, you cannot know what. It doesn’t guess the future; it preserves your options for accommodating the future. It doesn’t choose; it leaves you room to move.</li>
+  
+    <li>The Single Responsibility Principle (SRP) has its roots in Rebecca Wirfs-Brock and Brian Wilkerson’s idea of Responsibility-Driven Design (RDD). They say “A class has responsibilities that fulfill its purpose.” SRP doesn’t require that a class do only one very narrow thing or that it change for only a single nitpicky reason, instead SRP requires that a class be cohesive—that everything the class does be highly related to its purpose.</li>
+  
+    <li>Do not feel compelled to make design decisions prematurely. Resist, even if you fear your code would dismay the design gurus. When faced with an imperfect and muddled class like Gear, ask yourself: “What is the future cost of doing nothing today?”</li>
+  
+    <li>The future is uncertain and you will never know less than you know right now. The most cost-effective course of action may be to wait for more information.</li>
+  
+    <li>When the future cost of doing nothing is the same as the current cost, postpone the decision. Make the decision only when you must with the information you have at that time.</li>
+  
+    <li>Direct references into complicated structures are confusing, because they obscure what the data really is, and they are a maintenance nightmare, because every reference will need to be changed when the structure of the array changes.</li>
+  
+    <li>You do not have to know where you’re going to use good design practices to get there. Good practices reveal design.</li>
+  
+    <li>design choice in either/or terms is shortsighted. There are other choices. Your goal is to preserve single responsibility in Gear while making the fewest design commitments possible.</li>
+  
+    <li>Because you are writing changeable code, you are best served by postponing decisions until you are absolutely forced to make them. Any decision you make in advance of an explicit requirement is just a guess. Don’t decide; preserve your ability to make a decision later.</li>
+  
+    <li>Left unchecked, unmanaged dependencies cause an entire application to become an entangled mess. A day will come when it’s easier to rewrite everything than to change anything.</li>
+  
+    <li>It is not the class of the object that’s important, it’s the message you plan to send to it.</li>
+  
+    <li>Your applications will not be perfect but do not be discouraged. Perfection is elusive, perhaps even unreachable; this should not impede your desire to achieve it. Persist. Practice. Experiment. Imagine. Do your best work, and all else will follow.</li>
+  
+    <li>The reason that test-first gurus can easily start writing tests is that they have so much design experience. At this stage, they have already constructed a mental map of possibilities for objects and interactions in this application. They are not attached to any specific idea and plan to use tests to discover alternatives, but they know so much about design that they have already formed an intention about the application. It is this intention that allows them to specify the first test.</li>
+  
+    <li>The tenets of design are tools and with practice they will come naturally into your hand, allowing you to create changeable applications that serve their purpose and bring you joy.</li>
+  
+    <li>This book is full of rules about how to write code—rules for managing dependencies and creating interfaces. Now that you know these rules you can bend them to your own purposes. The tensions inherent in design mean that these rules are meant to be broken; learning to break them well is a designer’s greatest strength.</li>
+  
+    <li>This tension between the costs of concretion and the costs of abstraction is fundamental to object-oriented design. Concrete code is easy to understand but costly to extend. Abstract code may initially seem more obscure but, once understood, is far easier to change.</li>
+  
+    <li>The rules-of-thumb for testing private methods are thus: Never write them, and if you do, never ever test them, unless of course it makes sense to do so. Therefore, be biased against writing these tests but do not fear to do so if this would improve your lot.</li>
+  
+    <li>The solution to the problem of costly tests, however, is not to stop testing but instead to get better at it.</li>
+  
+    <li>It is common for programmers who are new to testing to find themselves in the unhappy state where the tests they write do cost more than the value those tests provide, and who therefore want to argue about the worth of tests. These are programmers who believed themselves highly productive in their former test-not lives but who have crashed into the test-first wall and stumbled to a halt. Their attempts at test-first programming result in less output, and their desire to regain productivity drives them to revert to old habits and forgo writing tests.</li>
+  
+    <li>Explicitly stating that subclasses are required to implement a message provides useful documentation for those who can be relied upon to read it and useful error messages for those who cannot.</li>
+  
+    <li>Domain objects are easy to find but they are not at the design center of your application. Instead, they are a trap for the unwary. If you fixate on domain objects you will tend to coerce behavior into them. Design experts notice domain objects without concentrating on them; they focus not on these objects but on the messages that pass between them. These messages are guides that lead you to discover other objects, ones that are just as necessary but far less obvious.</li>
+  
+    <li>Changing the fundamental design question from “I know I need this class, what should it do?” to “I need to send this message, who should respond to it?” is the first step in that direction.</li>
+  
+    <li>You don’t send messages because you have objects, you have objects because you send messages.</li>
+  
+    <li>“I know what I want and I trust you to do your part.”</li>
+  
+    <li>Think about interfaces. Create them intentionally. It is your interfaces, more than all of your tests and any of your code, that define your application and determine its future.</li>
+  
+    <li>Methods in the public interface should • Be explicitly identified as such • Be more about what than how • Have names that, insofar as you can anticipate, will not change • Take a hash as an options parameter</li>
+  
+    <li>The general rule for refactoring into a new inheritance hierarchy is to arrange code so that you can promote abstractions rather than demote concretions.</li>
+  
+    <li>The ability to tolerate ambiguity about the class of an object is the hallmark of a confident designer. Once you begin to treat your objects as if they are defined by their behavior rather than by their class, you enter into a new realm of expressive flexible design.</li>
+  
+    <li>If prevented from achieving perfection, your goals should switch to improving the overall situation by leaving the code better than you found it.</li>
+  
+    <li>Therefore, if you cannot remove unnecessary dependencies, you should isolate them within your class.</li>
+  
+    <li>Dependencies are foreign invaders that represent vulnerabilities, and they should be concise, explicit, and isolated.</li>
+  
+    <li>Pretend for a moment that your classes are people. If you were to give them advice about how to behave you would tell them to depend on things that change less often than you do.</li>
+  
+    <li>Design, therefore, must be concerned with the messages that pass between objects. It deals not only with what objects know (their responsibilities) and who they know (their dependencies), but how they talk to one another. The conversation between objects takes place using their interfaces; this chapter explores creating flexible interfaces that allow applications to grow and to change.</li>
+  
+</ul>
+
+  </div>
+</body>
+</html>
