@@ -6,7 +6,7 @@ layout: default
 <h2>Authors <small><a href="#authors">#</a></small></h2>
 <ul>
   {% for author in site.authors reversed %}
-    <li><a href="{{author.permalink}}">{{author.full_name}} ({{author.added_on}})</a></li>
+    <li><a href="{{author.permalink | prepend: site.baseurl}}">{{author.full_name}} ({{author.added_on}})</a></li>
   {% endfor %}
 </ul>
 
@@ -14,7 +14,7 @@ layout: default
 <h2>Books <small><a href="#books">#</a></small></h2>
 <ul>
 {% for book in site.books reversed %}
-  <li><a href="{{book.permalink}}">{{book.title}} ({{book.added_on}})</a></li>
+  <li><a href="{{book.permalink | prepend: site.baseurl}}">{{book.title}} ({{book.added_on}})</a></li>
 {% endfor %}
 </ul>
 
