@@ -43,7 +43,7 @@ jobs:
       - name: Jekyll build
         run: bundle exec jekyll build --trace --profile
 
-      - name: Publish GitHub Pages
+      - name: Push to gh-pages branch
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
