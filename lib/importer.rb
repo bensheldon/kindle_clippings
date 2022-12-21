@@ -37,13 +37,13 @@ class Importer
 
       data = clippings.map do |clipping|
         {
-          'title' => clipping.book_title,
-          'author' => clipping.author,
+          'title' => clipping.book_title.strip,
+          'author' => clipping.author.strip,
           'type' => clipping.type.to_s,
           'added_on' => clipping.added_on.iso8601,
           'page' => clipping.page,
           'location' => clipping.location,
-          'content' => clipping.content
+          'content' => clipping.content.strip
         }
       end
 
