@@ -45,7 +45,7 @@ class Importer
           'location' => clipping.location,
           'content' => clipping.content.strip
         }
-      end
+      end.sort_by { |item| item['added_on'] }
 
       File.write("imports/#{File.basename(filename, '.txt')}-#{Time.now.strftime('%Y-%m-%d_%H-%M-%S')}.yml",
                  data.to_yaml)

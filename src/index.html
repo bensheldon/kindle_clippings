@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div id="authors"></div>
+<h2>Authors <small><a href="#authors">#</a></small></h2>
+<ul>
+  {% for author in site.authors reversed %}
+    <li><a href="{{author.permalink}}">{{author.full_name}} ({{author.added_on}})</a></li>
+  {% endfor %}
+</ul>
+
+<div id="books"></div>
+<h2>Books <small><a href="#books">#</a></small></h2>
+<ul>
+{% for book in site.books reversed %}
+  <li><a href="{{book.permalink}}">{{book.title}} ({{book.added_on}})</a></li>
+{% endfor %}
+</ul>
+
+<div id="clippings"></div>
+<h2>Clippings <small><a href="#clippings">#</a></small></h2>
+<ul>
+{% for clipping in site.data['clippings'] reversed %}
+  <li>
+    <strong>{{clipping.title}} by {{clipping.author}} - {{clipping.added_on}}</strong>
+    <br>
+   {{clipping.content}} ({{clipping.added_on}}</li>
+{% endfor %}
