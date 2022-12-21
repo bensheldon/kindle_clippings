@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# gem "rails"
+gem 'kindleclippings', '~> 1.4'
+gem 'rspec', '~> 3.12'
+gem 'rubocop', '~> 1.41'
+gem 'rubocop-rspec', '~> 2.16'
 
-gem "rspec", "~> 3.12"
-
-gem "kindleclippings", "~> 1.4"
+gem 'rubocop-performance', '~> 1.15'
