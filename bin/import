@@ -1,18 +1,18 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require_relative '../lib/importer.rb'
+require_relative '../lib/importer'
 require 'yaml'
 
 importer = Importer.new
 
 initial_clippings = YAML.load_file('clippings.yml').size
 
-puts "Importing clipping..."
+puts 'Importing clipping...'
 importer.import
-puts "Deduping clippings..."
+puts 'Deduping clippings...'
 importer.dedupe
 
 total_clippings = YAML.load_file('clippings.yml').size
 
 puts "Imported #{total_clippings - initial_clippings} new clippings, #{total_clippings} total."
-
