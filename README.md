@@ -9,6 +9,8 @@ This project uses [**GitHub Actions**](./.github/workflows) to automatically ing
 1. Download the `My Clippings.txt` file from your Kindle
 2. Upload your `My Clippings.txt` into the [`import_here`](./import_here) directory via the GitHub UI.
 
+This will automatically trigger a GitHub Actions workflow that will parse the contents of your `My Clippings.txt`, append new items to [`clippings.yml`](./clippings.yml), delete the original file you uploaded, and create a new commit with those changes. Then the workflow will rebuild and republish the GitHub Pages website.
+
 ## Development
 
 Install it: 
