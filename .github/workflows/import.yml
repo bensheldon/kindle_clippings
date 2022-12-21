@@ -23,10 +23,18 @@ jobs:
           bundler-cache: true
           rubygems: latest
 
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "import_here/*.txt"
+
       - name: Import files
+        if: steps.check_files.outputs.files_exists == 'true'
         run: bundle exec bin/import
 
       - uses: stefanzweifel/git-auto-commit-action@v4
+        if: steps.check_files.outputs.files_exists == 'true'
         with:
           commit_message: Auto import clippings
           file_pattern: 'clippings.yml imports/*.yml import_here/*.txt'
