@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="{{ "/assets/bootstrap/bootstrap.min.css" | prepend: site.baseurl }}">
   <script src="{{ "/assets/bootstrap/bootstrap.bundle.min.js" | prepend: site.baseurl }}"></script>
 
@@ -23,13 +24,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="{{"/#authors" | prepend: site.baseurl }}">Authors</a>
+          <a class="nav-link" href="{{"/" | prepend: site.baseurl }}">Highlights</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{"/#books" | prepend: site.baseurl }}">Books</a>
+          <a class="nav-link" href="{{"/books" | prepend: site.baseurl }}">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{"/#clippings" | prepend: site.baseurl }}">Clippings</a>
+          <a class="nav-link" href="{{"/authors" | prepend: site.baseurl }}">Authors</a>
         </li>
       </ul>
     </div>

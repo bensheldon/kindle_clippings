@@ -7,9 +7,13 @@ AllCops:
   DisplayStyleGuide: true
   NewCops: enable
 
+Layout/LineLength:
+  Enabled: false
 Metrics:
   Enabled: false
 Style/Documentation:
+  Enabled: false
+Style/MultilineBlockChain:
   Enabled: false
 RSpec/ExampleLength:
   Enabled: false

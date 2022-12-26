@@ -1,0 +1,7 @@
+<h2>{{ book.title }}</h2>
+
+<ul>
+  {% for highlight in book.highlights %}
+    <li>{% include highlight_snippet.html highlight=highlight %}</li>
+  {% endfor %}
+</ul>

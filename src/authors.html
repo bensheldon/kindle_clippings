@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<h1>Authors</h1>
+
+<ul>
+  {% assign authors = site.authors | sort: 'added_on' | reverse %}
+  {% for author in authors %}
+  <li><a href="{{author.url | prepend: site.baseurl}}">{{author.title}} ({{author.added_on}})</a></li>
+  {% endfor %}
+</ul>
