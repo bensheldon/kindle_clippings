@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<h1>Books</h1>
+<ul>
+  {% assign books = site.books | sort: 'added_on' | reverse %}
+  {% for book in books %}
+  <li><a href="{{book.url | prepend: site.baseurl}}">{{book.title}} ({{book.added_on}})</a></li>
+  {% endfor %}
+</ul>

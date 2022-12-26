@@ -1,0 +1,5 @@
+<h1>{{ author.title }}</h1>
+
+{% for book in author.books %}
+  {% include book.html book=book %}
+{% endfor %}

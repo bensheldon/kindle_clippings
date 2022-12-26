@@ -2,30 +2,14 @@
 layout: default
 ---
 
-<div id="authors"></div>
-<h2>Authors <small><a href="#authors">#</a></small></h2>
+<h1>Highlights</h1>
 <ul>
-  {% for author in site.authors reversed %}
-    <li><a href="{{author.permalink | prepend: site.baseurl}}">{{author.full_name}} ({{author.added_on}})</a></li>
-  {% endfor %}
-</ul>
-
-<div id="books"></div>
-<h2>Books <small><a href="#books">#</a></small></h2>
-<ul>
-{% for book in site.books reversed %}
-  <li><a href="{{book.permalink | prepend: site.baseurl}}">{{book.title}} ({{book.added_on}})</a></li>
-{% endfor %}
-</ul>
-
-<div id="clippings"></div>
-<h2>Clippings <small><a href="#clippings">#</a></small></h2>
-<ul>
-{% for clipping in site.data['clippings'] reversed %}
+  {% assign highlights = site.highlights | sort: 'added_on' | reverse %}
+  {% for highlight in highlights %}
   <li>
-    <strong>{{clipping.title}} by {{clipping.author}} - {{clipping.added_on}}</strong>
+    <strong>{{highlight.book_title}} by <a href="{{highlight.author_page.url | prepend: site.baseurl}}">{{highlight.author_name}}</a> - {{highlight.added_on}}</strong>
     <br>
-   {{clipping.content}}
+    <p>{{highlight.content}}</p>
   </li>
 {% endfor %}
 </ul>

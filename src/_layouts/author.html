@@ -2,14 +2,5 @@
 layout: default
 ---
 
-<h1>{{ page.full_name }}</h1>
-
-{% for book in page.books %}
-  <h2>{{ book.title }}</h2>
-
-  <ul>
-    {% for clipping in book.clippings %}
-      <li>{{ clipping.content }}</li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+{% assign author = page %}
+{% include author.html author=author %}
