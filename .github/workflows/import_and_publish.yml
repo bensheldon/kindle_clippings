@@ -2,6 +2,7 @@ name: Import and Publish
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   import:
