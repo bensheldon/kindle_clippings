@@ -62,7 +62,7 @@ class Importer
       location = item['location'] || ''
       content = item['content'] || ''
 
-      array = [added_on, title, location, content]
+      [added_on, title, location, content]
     end
     File.write(clippings_file, all_clippings.to_yaml)
 
