@@ -6,8 +6,11 @@ require 'yaml'
 class Importer
   def import
     new_clippings = kindle_files.flat_map do |filename|
+      content = File.read(filename, encoding: 'bom|utf-8')
+      content.gsub!(/^\xEF\xBB\xBF/, '')
+
       parser = KindleClippings::Parser.new
-      results = parser.parse_file(filename).map do |clipping|
+      results = parser.parse(content).map do |clipping|
         {
           'title' => clipping.book_title.strip,
           'author' => clipping.author.strip,
@@ -53,7 +56,7 @@ class Importer
       item unless is_fragment
     end
 
-    all_clippings.sort_by! { |item| item['added_on'] }
+    all_clippings.sort_by! { |item| [item['added_on'], item['title'], item['location']] }
     File.write(clippings_file, all_clippings.to_yaml)
 
     all_clippings
