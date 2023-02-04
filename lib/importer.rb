@@ -56,7 +56,14 @@ class Importer
       item unless is_fragment
     end
 
-    all_clippings.sort_by! { |item| [item['added_on'], item['title'], item['location']] }
+    all_clippings.sort_by! do |item|
+      added_on = item['added_on'] || ''
+      title = item['title'] || ''
+      location = item['location'] || ''
+      content = item['content'] || ''
+
+      array = [added_on, title, location, content]
+    end
     File.write(clippings_file, all_clippings.to_yaml)
 
     all_clippings
