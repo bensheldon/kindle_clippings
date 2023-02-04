@@ -43,36 +43,6 @@
 
 <ul>
   
-    <li><p>Well-designed applications are highly abstract and under constant pressure to evolve; without tests these applications can neither be understood nor safely changed. The <strong>— : 7165</strong></p>
-</li>
-  
-    <li><p>Design is more the art of preserving changeability than it is the act of achieving perfection. Organizing Code to Allow for Easy <strong>— : 665</strong></p>
-</li>
-  
-    <li><p>You will never know less than you know right now. <strong>— : 663</strong></p>
-</li>
-  
-    <li><p>Creating an easy-to-change application, however, is a different matter. Your application needs to work right now just once; it must be easy to change forever. This quality of easy changeability reveals the craft of programming. Achieving it takes knowledge, skill, and a bit of artistic creativity. <strong>— : 652</strong></p>
-</li>
-  
-    <li><p>To name common problems and to solve the problems in common ways brings the fuzzy into focus. Design Patterns gave an entire generation of programmers the means to communicate and collaborate. <strong>— : 469</strong></p>
-</li>
-  
-    <li><p>Designs that anticipate specific future requirements almost always end badly. Practical design does not anticipate what will happen to your application, it merely accepts that something will and that, in the present, you cannot know what. It doesn’t guess the future; it preserves your options for accommodating the future. It doesn’t choose; it leaves you room to move. <strong>— : 430</strong></p>
-</li>
-  
-    <li><p>The Single Responsibility Principle (SRP) has its roots in Rebecca Wirfs-Brock and Brian Wilkerson’s idea of Responsibility-Driven Design (RDD). They say “A class has responsibilities that fulfill its purpose.” SRP doesn’t require that a class do only one very narrow thing or that it change for only a single nitpicky reason, instead SRP requires that a class be cohesive—that everything the class does be highly related to its purpose. <strong>— : 840</strong></p>
-</li>
-  
-    <li><p>Do not feel compelled to make design decisions prematurely. Resist, even if you fear your code would dismay the design gurus. When faced with an imperfect and muddled class like Gear, ask yourself: “What is the future cost of doing nothing today?” <strong>— : 853</strong></p>
-</li>
-  
-    <li><p>The future is uncertain and you will never know less than you know right now. The most cost-effective course of action may be to wait for more information. <strong>— : 857</strong></p>
-</li>
-  
-    <li><p>When the future cost of doing nothing is the same as the current cost, postpone the decision. Make the decision only when you must with the information you have at that time. <strong>— : 862</strong></p>
-</li>
-  
     <li><p>Direct references into complicated structures are confusing, because they obscure what the data really is, and they are a maintenance nightmare, because every reference will need to be changed when the structure of the array changes. <strong>— : 1005</strong></p>
 </li>
   
@@ -91,31 +61,22 @@
     <li><p>It is not the class of the object that’s important, it’s the message you plan to send to it. <strong>— : 1421</strong></p>
 </li>
   
-    <li><p>Your applications will not be perfect but do not be discouraged. Perfection is elusive, perhaps even unreachable; this should not impede your desire to achieve it. Persist. Practice. Experiment. Imagine. Do your best work, and all else will follow. <strong>— : 7181</strong></p>
+    <li><p>If prevented from achieving perfection, your goals should switch to improving the overall situation by leaving the code better than you found it. <strong>— : 1476</strong></p>
+</li>
+  
+    <li><p>Therefore, if you cannot remove unnecessary dependencies, you should isolate them within your class. <strong>— : 1478</strong></p>
+</li>
+  
+    <li><p>Dependencies are foreign invaders that represent vulnerabilities, and they should be concise, explicit, and isolated. <strong>— : 1482</strong></p>
+</li>
+  
+    <li><p>Pretend for a moment that your classes are people. If you were to give them advice about how to behave you would tell them to depend on things that change less often than you do. <strong>— : 1876</strong></p>
+</li>
+  
+    <li><p>Design, therefore, must be concerned with the messages that pass between objects. It deals not only with what objects know (their responsibilities) and who they know (their dependencies), but how they talk to one another. The conversation between objects takes place using their interfaces; this chapter explores creating flexible interfaces that allow applications to grow and to change. <strong>— : 1965</strong></p>
 </li>
   
     <li><p>The reason that test-first gurus can easily start writing tests is that they have so much design experience. At this stage, they have already constructed a mental map of possibilities for objects and interactions in this application. They are not attached to any specific idea and plan to use tests to discover alternatives, but they know so much about design that they have already formed an intention about the application. It is this intention that allows them to specify the first test. <strong>— : 2058</strong></p>
-</li>
-  
-    <li><p>The tenets of design are tools and with practice they will come naturally into your hand, allowing you to create changeable applications that serve their purpose and bring you joy. <strong>— : 7180</strong></p>
-</li>
-  
-    <li><p>This book is full of rules about how to write code—rules for managing dependencies and creating interfaces. Now that you know these rules you can bend them to your own purposes. The tensions inherent in design mean that these rules are meant to be broken; learning to break them well is a designer’s greatest strength. <strong>— : 7177</strong></p>
-</li>
-  
-    <li><p>This tension between the costs of concretion and the costs of abstraction is fundamental to object-oriented design. Concrete code is easy to understand but costly to extend. Abstract code may initially seem more obscure but, once understood, is far easier to change. <strong>— : 2711</strong></p>
-</li>
-  
-    <li><p>The rules-of-thumb for testing private methods are thus: Never write them, and if you do, never ever test them, unless of course it makes sense to do so. Therefore, be biased against writing these tests but do not fear to do so if this would improve your lot. <strong>— : 6112</strong></p>
-</li>
-  
-    <li><p>The solution to the problem of costly tests, however, is not to stop testing but instead to get better at it. <strong>— : 5481</strong></p>
-</li>
-  
-    <li><p>It is common for programmers who are new to testing to find themselves in the unhappy state where the tests they write do cost more than the value those tests provide, and who therefore want to argue about the worth of tests. These are programmers who believed themselves highly productive in their former test-not lives but who have crashed into the test-first wall and stumbled to a halt. Their attempts at test-first programming result in less output, and their desire to regain productivity drives them to revert to old habits and forgo writing tests. <strong>— : 5477</strong></p>
-</li>
-  
-    <li><p>Explicitly stating that subclasses are required to implement a message provides useful documentation for those who can be relied upon to read it and useful error messages for those who cannot. <strong>— : 3632</strong></p>
 </li>
   
     <li><p>Domain objects are easy to find but they are not at the design center of your application. Instead, they are a trap for the unwary. If you fixate on domain objects you will tend to coerce behavior into them. Design experts notice domain objects without concentrating on them; they focus not on these objects but on the messages that pass between them. These messages are guides that lead you to discover other objects, ones that are just as necessary but far less obvious. <strong>— : 2067</strong></p>
@@ -136,25 +97,64 @@
     <li><p>Methods in the public interface should • Be explicitly identified as such • Be more about what than how • Have names that, insofar as you can anticipate, will not change • Take a hash as an options parameter <strong>— : 2319</strong></p>
 </li>
   
-    <li><p>The general rule for refactoring into a new inheritance hierarchy is to arrange code so that you can promote abstractions rather than demote concretions. <strong>— : 3441</strong></p>
+    <li><p>This tension between the costs of concretion and the costs of abstraction is fundamental to object-oriented design. Concrete code is easy to understand but costly to extend. Abstract code may initially seem more obscure but, once understood, is far easier to change. <strong>— : 2711</strong></p>
 </li>
   
     <li><p>The ability to tolerate ambiguity about the class of an object is the hallmark of a confident designer. Once you begin to treat your objects as if they are defined by their behavior rather than by their class, you enter into a new realm of expressive flexible design. <strong>— : 2714</strong></p>
 </li>
   
-    <li><p>If prevented from achieving perfection, your goals should switch to improving the overall situation by leaving the code better than you found it. <strong>— : 1476</strong></p>
+    <li><p>The general rule for refactoring into a new inheritance hierarchy is to arrange code so that you can promote abstractions rather than demote concretions. <strong>— : 3441</strong></p>
 </li>
   
-    <li><p>Therefore, if you cannot remove unnecessary dependencies, you should isolate them within your class. <strong>— : 1478</strong></p>
+    <li><p>Explicitly stating that subclasses are required to implement a message provides useful documentation for those who can be relied upon to read it and useful error messages for those who cannot. <strong>— : 3632</strong></p>
 </li>
   
-    <li><p>Dependencies are foreign invaders that represent vulnerabilities, and they should be concise, explicit, and isolated. <strong>— : 1482</strong></p>
+    <li><p>Designs that anticipate specific future requirements almost always end badly. Practical design does not anticipate what will happen to your application, it merely accepts that something will and that, in the present, you cannot know what. It doesn’t guess the future; it preserves your options for accommodating the future. It doesn’t choose; it leaves you room to move. <strong>— : 430</strong></p>
 </li>
   
-    <li><p>Pretend for a moment that your classes are people. If you were to give them advice about how to behave you would tell them to depend on things that change less often than you do. <strong>— : 1876</strong></p>
+    <li><p>To name common problems and to solve the problems in common ways brings the fuzzy into focus. Design Patterns gave an entire generation of programmers the means to communicate and collaborate. <strong>— : 469</strong></p>
 </li>
   
-    <li><p>Design, therefore, must be concerned with the messages that pass between objects. It deals not only with what objects know (their responsibilities) and who they know (their dependencies), but how they talk to one another. The conversation between objects takes place using their interfaces; this chapter explores creating flexible interfaces that allow applications to grow and to change. <strong>— : 1965</strong></p>
+    <li><p>It is common for programmers who are new to testing to find themselves in the unhappy state where the tests they write do cost more than the value those tests provide, and who therefore want to argue about the worth of tests. These are programmers who believed themselves highly productive in their former test-not lives but who have crashed into the test-first wall and stumbled to a halt. Their attempts at test-first programming result in less output, and their desire to regain productivity drives them to revert to old habits and forgo writing tests. <strong>— : 5477</strong></p>
+</li>
+  
+    <li><p>The solution to the problem of costly tests, however, is not to stop testing but instead to get better at it. <strong>— : 5481</strong></p>
+</li>
+  
+    <li><p>The rules-of-thumb for testing private methods are thus: Never write them, and if you do, never ever test them, unless of course it makes sense to do so. Therefore, be biased against writing these tests but do not fear to do so if this would improve your lot. <strong>— : 6112</strong></p>
+</li>
+  
+    <li><p>Creating an easy-to-change application, however, is a different matter. Your application needs to work right now just once; it must be easy to change forever. This quality of easy changeability reveals the craft of programming. Achieving it takes knowledge, skill, and a bit of artistic creativity. <strong>— : 652</strong></p>
+</li>
+  
+    <li><p>You will never know less than you know right now. <strong>— : 663</strong></p>
+</li>
+  
+    <li><p>Design is more the art of preserving changeability than it is the act of achieving perfection. Organizing Code to Allow for Easy <strong>— : 665</strong></p>
+</li>
+  
+    <li><p>Well-designed applications are highly abstract and under constant pressure to evolve; without tests these applications can neither be understood nor safely changed. The <strong>— : 7165</strong></p>
+</li>
+  
+    <li><p>This book is full of rules about how to write code—rules for managing dependencies and creating interfaces. Now that you know these rules you can bend them to your own purposes. The tensions inherent in design mean that these rules are meant to be broken; learning to break them well is a designer’s greatest strength. <strong>— : 7177</strong></p>
+</li>
+  
+    <li><p>The tenets of design are tools and with practice they will come naturally into your hand, allowing you to create changeable applications that serve their purpose and bring you joy. <strong>— : 7180</strong></p>
+</li>
+  
+    <li><p>Your applications will not be perfect but do not be discouraged. Perfection is elusive, perhaps even unreachable; this should not impede your desire to achieve it. Persist. Practice. Experiment. Imagine. Do your best work, and all else will follow. <strong>— : 7181</strong></p>
+</li>
+  
+    <li><p>The Single Responsibility Principle (SRP) has its roots in Rebecca Wirfs-Brock and Brian Wilkerson’s idea of Responsibility-Driven Design (RDD). They say “A class has responsibilities that fulfill its purpose.” SRP doesn’t require that a class do only one very narrow thing or that it change for only a single nitpicky reason, instead SRP requires that a class be cohesive—that everything the class does be highly related to its purpose. <strong>— : 840</strong></p>
+</li>
+  
+    <li><p>Do not feel compelled to make design decisions prematurely. Resist, even if you fear your code would dismay the design gurus. When faced with an imperfect and muddled class like Gear, ask yourself: “What is the future cost of doing nothing today?” <strong>— : 853</strong></p>
+</li>
+  
+    <li><p>The future is uncertain and you will never know less than you know right now. The most cost-effective course of action may be to wait for more information. <strong>— : 857</strong></p>
+</li>
+  
+    <li><p>When the future cost of doing nothing is the same as the current cost, postpone the decision. Make the decision only when you must with the information you have at that time. <strong>— : 862</strong></p>
 </li>
   
 </ul>
