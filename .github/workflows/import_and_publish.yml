@@ -39,7 +39,7 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         with:
           commit_message: Auto import clippings
-          file_pattern: 'clippings.yml imports/*.yml import_here/*.txt'
+          file_pattern: 'clippings.yml import_here/*.txt'
 
       - name: Jekyll build
         run: bundle exec jekyll build --trace --profile
