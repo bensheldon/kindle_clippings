@@ -9,4 +9,4 @@ gem 'rubocop-rspec', '~> 2.18'
 
 gem 'activesupport', '~> 7.0'
 gem 'jekyll', '~> 4.3'
-gem 'rubocop-performance', '~> 1.15'
+gem 'rubocop-performance', '~> 1.16'
