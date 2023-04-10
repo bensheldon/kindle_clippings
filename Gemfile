@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'kindleclippings', '~> 1.4'
 gem 'rspec', '~> 3.12'
-gem 'rubocop', '~> 1.48'
+gem 'rubocop', '~> 1.49'
 gem 'rubocop-rspec', '~> 2.19'
 
 gem 'activesupport', '~> 7.0'
