@@ -35,7 +35,7 @@ jobs:
         run: bundle exec bin/import
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         if: steps.check_files.outputs.files_exists == 'true'
         with:
           commit_message: Auto import clippings
