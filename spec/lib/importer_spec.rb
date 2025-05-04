@@ -21,10 +21,9 @@ RSpec.describe Importer do
     Dir.glob('tmp/imports/*.txt') { |file| FileUtils.mv(file, "import_here/#{File.basename(file)}") }
   end
 
-  describe '#import' do
+  describe '#import_kindle' do
     before do
       FileUtils.cp('spec/fixtures/test_clippings.yml', 'clippings.yml')
-
       # Import a few files to test deduping
       FileUtils.cp('spec/fixtures/test_clippings.txt', 'import_here/test_clippings1.txt')
       FileUtils.cp('spec/fixtures/test_clippings.txt', 'import_here/test_clippings2.txt')
@@ -34,7 +33,7 @@ RSpec.describe Importer do
       initial_clippings = YAML.load_file('clippings.yml')
       expect(initial_clippings.size).to eq 1
 
-      importer.import
+      importer.import_kindle
 
       final_clippings = YAML.load_file('clippings.yml')
 
@@ -47,8 +46,14 @@ RSpec.describe Importer do
     end
 
     it 'deletes the import txt file' do
-      importer.import
+      importer.import_kindle
       expect(Dir.glob('imports/*.txt').count).to eq 0
+    end
+  end
+
+  describe '#import_kobo' do
+    it 'skips Kobo import test (no fixture available)' do
+      skip 'No Kobo sqlite fixture available for testing.'
     end
   end
 end
