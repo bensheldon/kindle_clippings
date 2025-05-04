@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.2.2.1)
+    activesupport (8.0.2)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -13,6 +13,7 @@ GEM
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
@@ -132,9 +133,10 @@ GEM
       rubocop (~> 1.72, >= 1.72.1)
     ruby-progressbar (1.13.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.87.0)
+    sass-embedded (1.87.0-arm64-darwin)
       google-protobuf (~> 4.30)
-      rake (>= 13)
+    sass-embedded (1.87.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.30)
     securerandom (0.4.1)
     sqlite3 (2.6.0-arm64-darwin)
     sqlite3 (2.6.0-x86_64-linux-gnu)
@@ -143,10 +145,12 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
+    uri (1.0.3)
     webrick (1.9.1)
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -160,4 +164,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.3.22
+   2.6.8
