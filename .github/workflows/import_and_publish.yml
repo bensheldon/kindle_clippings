@@ -26,7 +26,7 @@ jobs:
 
       - name: Check for new files to import
         id: check_files
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "import_here/*.txt"
 
