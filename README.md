@@ -1,4 +1,17 @@
-# Kindle Clippings Importer and Viewer
+# Book Quotes and Clippings
+
+## Kobo Quotes
+
+Plug in the Kobo and accept the connection. Then run:
+
+```sh
+bin/kobo
+```
+
+This will import quotes from the kobo sqlite database
+
+
+## Kindle Clippings Importer and Viewer
 
 Automatically ingests Kindle's `My Clippings.txt` files; combines, dedupes, and preserves their contents (Highlights/Bookmarks/Notes), and generates a simple website for reading and exploring them.
 

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/kobo_importer'
+
+KOBO_SQLITE = '/Volumes/KOBOeReader/.kobo/KoboReader.sqlite'
+CLIPPINGS_FILE = 'clippings.yml'
+
+puts "Importing Kobo highlights from #{KOBO_SQLITE}..."
+KoboImporter.new(CLIPPINGS_FILE, KOBO_SQLITE).import
+puts "Import complete. Highlights merged into #{CLIPPINGS_FILE}."
